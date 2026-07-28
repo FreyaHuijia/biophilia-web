@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BIOPHILIA — A Virtual Gallery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Public+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div id="scene"></div>
+
+<!-- ============ TOUR UI ============ -->
+<div id="tourUI" aria-hidden="true">
+  <div class="topbar">
+    <div class="brand">BIOPHILIA</div>
+    <div class="topbtns">
+      <button class="icobtn" id="soundBtn" aria-pressed="false">Sound</button>
+      <button class="icobtn" id="exitBtn">Exit tour</button>
+    </div>
+  </div>
+  <div id="hint">Drag to look · Click a painting to approach · WASD to walk</div>
+  <div id="nav" role="navigation" aria-label="Tour navigation">
+    <button data-stop="overview" class="cur">Overview</button>
+    <button data-stop="0">Ascent</button>
+    <button data-stop="1">Within</button>
+    <button data-stop="2">Terrain</button>
+  </div>
+  <aside id="panel" aria-live="polite">
+    <button class="close" id="panelClose" aria-label="Close panel">×</button>
+    <div class="eyebrow" id="pEyebrow"></div>
+    <h3 id="pTitle"></h3>
+    <div class="dims" id="pDims"></div>
+    <blockquote id="pQuote"></blockquote>
+    <div class="ctx" id="pCtx"></div>
+  </aside>
+</div>
+
+<!-- ============ LANDING ============ -->
+<div id="landing">
+  <div class="wrap">
+    <div class="hero">
+      <div class="eyebrow">Catalyst Grant Project · Georgia Institute of Technology</div>
+      <h1>BIOPHILIA</h1>
+      <p class="lede">An invitation to see nature as our teacher — asking us to slow down, observe, and listen.</p>
+      <div class="actions">
+        <button class="btn" id="enterBtn">Enter the virtual tour</button>
+        <span class="scrollhint">or scroll to read more ↓</span>
+      </div>
+    </div>
+
+    <section id="mission">
+      <h2>The Project</h2>
+      <p class="prose">In nature, everything moves with clarity and rhythm. Nothing is forced, yet everything unfolds as it should. We are not separate from this — we function in the same way, but have forgotten how to move with that flow. What we search for — <em>clarity, direction, balance</em> — is already present, reflected in the way nature grows and exists.</p>
+      <p class="prose">Awarded a Catalyst Grant, Biophilia is an ongoing project exploring human relationships with the natural world through painting, sound, and spatial design. It invites a shift in perception: from separation to connection. This work marks the beginning of a larger project that will continue to evolve.</p>
+    </section>
+
+    <section id="works">
+      <h2>Three Paintings</h2>
+      <div class="works">
+        <button class="work" data-jump="0">
+          <img src="ascent.jpg" alt="Ascent — oil painting of a face emerging from forest canopy">
+          <div><h3>ASCENT</h3><div class="meta">Oil on canvas · 5 × 6 ft</div></div>
+          <span class="go">View in tour →</span>
+        </button>
+        <button class="work" data-jump="1">
+          <div class="ph" aria-hidden="true"></div>
+          <div><h3>WITHIN</h3><div class="meta">Oil on canvas · 40 × 30 in</div></div>
+          <span class="go">View in tour →</span>
+        </button>
+        <button class="work" data-jump="2">
+          <img src="terrain.jpg" alt="Terrain — oil painting of moss-covered forms resting like a body in the forest">
+          <div><h3>TERRAIN</h3><div class="meta">Oil on canvas · 20 × 16 in</div></div>
+          <span class="go">View in tour →</span>
+        </button>
+      </div>
+    </section>
+
+    <section id="people">
+      <h2>People</h2>
+      <div class="people">
+        <div class="person">
+          <h3>Belinda Person</h3>
+          <div class="role">Artist · Project Lead</div>
+          <p>Belinda Person is a painter whose work explores the continuity between the human body and the natural world. Through oil painting, she renders landscapes where figure and forest share one surface — inviting viewers to recognize themselves as part of, not apart from, the living environment.</p>
+        </div>
+        <div class="person">
+          <h3>Krystian Ramlogan</h3>
+          <div class="role">Professor · Research Collaborator</div>
+          <p>Krystian Ramlogan is a faculty researcher at the Georgia Institute of Technology working across immersive media, sound, and spatial design. His collaboration on Biophilia extends the paintings into sensory environments — asking how a painting can become a space rather than a static object on a wall.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      Biophilia · Georgia Institute of Technology<br>
+      Catalyst Grant · Painting, Sound &amp; Spatial Design
+    </footer>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="gallery-data.js"></script>
+<script src="audio.js"></script>
+<script src="ui.js"></script>
+<script src="gallery-3d.js"></script>
+</body>
+</html>

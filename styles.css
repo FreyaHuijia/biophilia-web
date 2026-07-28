@@ -1,0 +1,92 @@
+:root{
+  --pine:#0b1410;        /* deep forest dark */
+  --moss:#7fa653;        /* living moss highlight */
+  --mist:#c7d4c9;        /* pale fog */
+  --lichen:#e9efe7;      /* near-white green */
+  --bark:#8e7b8c;        /* mauve bark from the paintings */
+  --ink:#101a14;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;background:var(--pine);color:var(--lichen);font-family:'Public Sans',sans-serif;font-weight:300;-webkit-font-smoothing:antialiased}
+#scene{position:fixed;inset:0;z-index:0}
+canvas{display:block}
+
+/* ---------- landing overlay ---------- */
+#landing{position:fixed;inset:0;z-index:10;overflow-y:auto;background:linear-gradient(180deg,rgba(11,20,16,.42) 0%,rgba(11,20,16,.84) 46%,rgba(11,20,16,.97) 100%);transition:opacity 1.2s ease,visibility 1.2s}
+#landing.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.wrap{max-width:880px;margin:0 auto;padding:0 28px}
+
+.hero{min-height:92vh;display:flex;flex-direction:column;justify-content:center;padding:90px 0 60px}
+.eyebrow{font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--moss);margin-bottom:26px}
+h1{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(58px,11vw,128px);letter-spacing:.08em;line-height:.95;color:var(--lichen)}
+.hero p.lede{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:clamp(19px,2.6vw,26px);line-height:1.55;color:var(--mist);max-width:620px;margin-top:34px}
+.hero .actions{margin-top:48px;display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+.btn{display:inline-block;border:1px solid var(--moss);color:var(--lichen);background:rgba(127,166,83,.10);padding:15px 34px;font-size:13px;letter-spacing:.22em;text-transform:uppercase;cursor:pointer;transition:background .3s,transform .3s;font-family:'Public Sans',sans-serif}
+.btn:hover,.btn:focus-visible{background:rgba(127,166,83,.28);transform:translateY(-1px)}
+.btn:focus-visible{outline:2px solid var(--moss);outline-offset:3px}
+.scrollhint{font-size:11px;letter-spacing:.28em;text-transform:uppercase;color:rgba(199,212,201,.5)}
+
+section{padding:70px 0;border-top:1px solid rgba(199,212,201,.12)}
+h2{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(28px,4vw,40px);margin-bottom:28px;color:var(--lichen)}
+.prose{font-size:16.5px;line-height:1.85;color:var(--mist);max-width:640px}
+.prose+.prose{margin-top:18px}
+.prose em{font-family:'Fraunces',serif;color:var(--lichen)}
+
+/* paintings list on landing */
+.works{display:flex;flex-direction:column;gap:14px;margin-top:8px}
+.work{display:grid;grid-template-columns:96px 1fr auto;gap:22px;align-items:center;padding:18px 20px;border:1px solid rgba(199,212,201,.14);background:rgba(16,26,20,.45);cursor:pointer;transition:border-color .3s,background .3s;text-align:left;color:inherit;font:inherit}
+.work:hover,.work:focus-visible{border-color:var(--moss);background:rgba(127,166,83,.08)}
+.work:focus-visible{outline:2px solid var(--moss);outline-offset:2px}
+.work img{width:96px;height:76px;object-fit:cover;display:block;filter:saturate(.92)}
+.work .ph{width:96px;height:76px;background:linear-gradient(135deg,#24372a,#42563a 60%,#2a3d2e)}
+.work h3{font-family:'Fraunces',serif;font-weight:400;font-size:22px;letter-spacing:.06em}
+.work .meta{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(199,212,201,.62);margin-top:6px}
+.work .go{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--moss);white-space:nowrap}
+
+.people{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:34px;margin-top:6px}
+.person h3{font-family:'Fraunces',serif;font-weight:400;font-size:21px;margin-bottom:4px}
+.person .role{font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--moss);margin-bottom:14px}
+.person p{font-size:15px;line-height:1.75;color:var(--mist)}
+footer{padding:46px 0 70px;border-top:1px solid rgba(199,212,201,.12);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:rgba(199,212,201,.45);line-height:2}
+
+/* ---------- tour UI ---------- */
+#tourUI{position:fixed;inset:0;z-index:5;pointer-events:none;opacity:0;transition:opacity 1s ease .6s}
+#tourUI.active{opacity:1}
+#tourUI .topbar{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;padding:20px 26px;pointer-events:none}
+#tourUI .brand{font-family:'Fraunces',serif;letter-spacing:.3em;font-size:15px;color:var(--lichen)}
+#tourUI .topbtns{display:flex;gap:10px;pointer-events:auto}
+.icobtn{border:1px solid rgba(199,212,201,.3);background:rgba(11,20,16,.55);color:var(--lichen);font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:10px 16px;cursor:pointer;transition:border-color .3s,background .3s;font-family:'Public Sans',sans-serif}
+.icobtn:hover{border-color:var(--moss)}
+.icobtn[aria-pressed="true"]{background:rgba(127,166,83,.22);border-color:var(--moss)}
+
+#nav{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);display:flex;gap:8px;pointer-events:auto;background:rgba(11,20,16,.6);backdrop-filter:blur(8px);padding:8px;border:1px solid rgba(199,212,201,.18)}
+#nav button{border:none;background:transparent;color:rgba(233,239,231,.75);font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;padding:11px 16px;cursor:pointer;font-family:'Public Sans',sans-serif;transition:background .25s,color .25s}
+#nav button:hover{color:var(--lichen)}
+#nav button.cur{background:rgba(127,166,83,.25);color:var(--lichen)}
+
+#hint{position:absolute;bottom:84px;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(199,212,201,.55);white-space:nowrap;transition:opacity 1s}
+#hint.fade{opacity:0}
+
+/* didactic panel — gallery wall label */
+#panel{position:absolute;top:0;right:0;height:100%;width:min(420px,100%);background:rgba(13,22,17,.92);backdrop-filter:blur(14px);border-left:1px solid rgba(199,212,201,.16);padding:84px 38px 38px;transform:translateX(102%);transition:transform .7s cubic-bezier(.22,1,.3,1);pointer-events:auto;overflow-y:auto}
+#panel.open{transform:translateX(0)}
+#panel .eyebrow{margin-bottom:14px}
+#panel h3{font-family:'Fraunces',serif;font-weight:300;font-size:42px;letter-spacing:.08em;margin-bottom:8px}
+#panel .dims{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(199,212,201,.6);margin-bottom:30px}
+#panel blockquote{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:21px;line-height:1.65;color:var(--mist);border-left:2px solid var(--moss);padding-left:20px}
+#panel .ctx{margin-top:30px;font-size:14.5px;line-height:1.8;color:rgba(199,212,201,.85)}
+#panel .close{position:absolute;top:22px;right:22px;border:1px solid rgba(199,212,201,.3);background:transparent;color:var(--lichen);width:38px;height:38px;font-size:16px;cursor:pointer}
+#panel .close:hover{border-color:var(--moss)}
+
+@media (max-width:640px){
+  #panel{top:auto;bottom:0;height:auto;max-height:62vh;width:100%;border-left:none;border-top:1px solid rgba(199,212,201,.16);transform:translateY(104%);padding:56px 26px 90px}
+  #panel.open{transform:translateY(0)}
+  #panel h3{font-size:32px}
+  #hint{display:none}
+  .work{grid-template-columns:72px 1fr;gap:14px}
+  .work .go{display:none}
+  .work img,.work .ph{width:72px;height:58px}
+}
+@media (prefers-reduced-motion: reduce){
+  *{transition-duration:.01ms!important;animation:none!important}
+}
