@@ -7,13 +7,13 @@ window.PAINTINGS = [
   },
   {
     id:"within", title:"WITHIN", dims:"Oil on canvas · 40 × 30 in",
-    w:2.0, h:1.5, src:null, /* placeholder until high-res scan */
+    w:1.5, h:2.0, src:"within.jpg",
     quote:"Nature doesn't search for where it belongs. It already is. Nothing is missing. We, too, are enough when we embrace ourselves.",
     ctx:"Within turns the gaze inward. The forest here is not a destination but a condition — belonging that requires no searching, no proof."
   },
   {
     id:"terrain", title:"TERRAIN", dims:"Oil on canvas · 20 × 16 in",
-    w:1.6, h:1.28, src:"terrain.jpg",
+    w:1.25, h:1.71, src:"terrain.jpg",
     quote:"The body stands like a mountain. Nothing is separate. We are part of the same ground, quietly connected.",
     ctx:"In Terrain, moss-covered forms rest like a body in the forest floor. Figure and landscape share one anatomy — the same ground, quietly connected."
   }
