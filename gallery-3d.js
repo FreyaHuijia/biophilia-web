@@ -170,7 +170,7 @@ PAINTINGS.forEach((p,i)=>{
   // spotlight
   const spot=new THREE.SpotLight(0xfff4dd,1.15,22,.5,.55,1.2);
   spot.position.set(px*0.62, 6.2, pz*0.62);
-  spot.target=frame; scene.add(spot); scene.add(spot.target);
+  spot.target=frame; scene.add(spot);
 
   scene.add(group);
 
