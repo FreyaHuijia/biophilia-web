@@ -35,6 +35,10 @@
     <div class="dims" id="pDims"></div>
     <blockquote id="pQuote"></blockquote>
     <div class="ctx" id="pCtx"></div>
+    <div class="pvr" id="pVr" hidden>
+      <div class="pvr-label">In virtual reality</div>
+      <video id="pVrVideo" muted loop playsinline preload="none"></video>
+    </div>
   </aside>
 </div>
 
@@ -44,17 +48,34 @@
     <div class="hero">
       <div class="eyebrow">Catalyst Grant Project · Georgia Institute of Technology</div>
       <h1>BIOPHILIA</h1>
-      <p class="lede">An invitation to see nature as our teacher — asking us to slow down, observe, and listen.</p>
+      <p class="lede">An invitation to see nature as our teacher, asking us to slow down, observe, and listen.</p>
       <div class="actions">
         <button class="btn" id="enterBtn">Enter the virtual tour</button>
         <span class="scrollhint">or scroll to read more ↓</span>
       </div>
     </div>
 
+    <section id="vr">
+      <div class="eyebrow">Immersive · In VR</div>
+      <h2>Step inside the paintings</h2>
+      <div class="vr-video">
+        <!-- TODO: swap in the three-painting montage video once it is ready -->
+        <video src="within-vr.mp4" poster="within.jpg" autoplay muted loop playsinline preload="metadata"></video>
+      </div>
+      <p class="prose">Biophilia reaches beyond the canvas. In virtual reality, each painting becomes a place, a living, three-dimensional world you can move through.</p>
+      <div class="actions">
+        <!-- TODO: replace href="#" with the VR experience URL (e.g. Meta Quest / WebXR link) when it is live -->
+        <a class="btn" id="vrBtn" href="#" role="button">View in VR →</a>
+        <span class="scrollhint">Headset experience · launching soon</span>
+      </div>
+    </section>
+
     <section id="mission">
       <h2>The Project</h2>
-      <p class="prose">In nature, everything moves with clarity and rhythm. Nothing is forced, yet everything unfolds as it should. We are not separate from this — we function in the same way, but have forgotten how to move with that flow. What we search for — <em>clarity, direction, balance</em> — is already present, reflected in the way nature grows and exists.</p>
-      <p class="prose">Awarded a Catalyst Grant, Biophilia is an ongoing project exploring human relationships with the natural world through painting, sound, and spatial design. It invites a shift in perception: from separation to connection. This work marks the beginning of a larger project that will continue to evolve.</p>
+      <p class="prose">There is a quiet wisdom in nature.</p>
+      <p class="prose">Nothing rushes to become. Rivers find their way, trees reach toward the light, and life unfolds in rhythms of movement and rest. Somewhere along the way, we learned to separate ourselves from this rhythm, to search outside of ourselves for the clarity, balance, and belonging that nature has been reflecting back to us all along.</p>
+      <p class="prose">Biophilia is an immersive art experience that explores the intimate relationship between the human body and the natural world. Through painting, virtual reality, sound, and digital media, the project dissolves the boundaries between human and nature, inviting us to remember that we are not simply observers of the natural world, we are part of it.</p>
+      <p class="prose">Supported by the Georgia Tech Arts Catalyst Grant, Biophilia is an evolving body of work and the beginning of a larger exploration of connection, presence, and our innate relationship with the living world.</p>
     </section>
 
     <section id="works">
@@ -67,30 +88,14 @@
         </button>
         <button class="work" data-jump="1">
           <img src="within.jpg" alt="Within — oil painting of a face emerging beside a forest stream">
-          <div><h3>WITHIN</h3><div class="meta">Oil on canvas · 40 × 30 in</div></div>
+          <div><h3>WITHIN</h3><div class="meta">Oil on canvas · 30 × 40 in</div></div>
           <span class="go">View in tour →</span>
         </button>
         <button class="work" data-jump="2">
           <img src="terrain.jpg" alt="Terrain — oil painting of moss-covered forms resting like a body in the forest">
-          <div><h3>TERRAIN</h3><div class="meta">Oil on canvas · 20 × 16 in</div></div>
+          <div><h3>TERRAIN</h3><div class="meta">Oil on canvas · 18 × 20 in</div></div>
           <span class="go">View in tour →</span>
         </button>
-      </div>
-    </section>
-
-    <section id="people">
-      <h2>People</h2>
-      <div class="people">
-        <div class="person">
-          <h3>Belinda Person</h3>
-          <div class="role">Artist · Project Lead</div>
-          <p>Belinda Person is a painter whose work explores the continuity between the human body and the natural world. Through oil painting, she renders landscapes where figure and forest share one surface — inviting viewers to recognize themselves as part of, not apart from, the living environment.</p>
-        </div>
-        <div class="person">
-          <h3>Krystian Ramlogan</h3>
-          <div class="role">Professor · Research Collaborator</div>
-          <p>Krystian Ramlogan is a faculty researcher at the Georgia Institute of Technology working across immersive media, sound, and spatial design. His collaboration on Biophilia extends the paintings into sensory environments — asking how a painting can become a space rather than a static object on a wall.</p>
-        </div>
       </div>
     </section>
 
