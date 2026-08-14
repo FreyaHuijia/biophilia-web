@@ -99,3 +99,62 @@ footer{padding:46px 0 70px;border-top:1px solid rgba(199,212,201,.12);font-size:
 @media (prefers-reduced-motion: reduce){
   *{transition-duration:.01ms!important;animation:none!important}
 }
+
+/* ---------- main website navigation ---------- */
+
+.site-header {
+  position: relative;
+  z-index: 20;
+  width: min(1100px, calc(100% - 56px));
+  margin: 0 auto;
+  padding: 24px 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-bottom: 1px solid rgba(199, 212, 201, 0.12);
+}
+
+.site-logo {
+  color: var(--lichen);
+  font-family: "Fraunces", serif;
+  font-size: 16px;
+  letter-spacing: 0.28em;
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  gap: 28px;
+}
+
+.site-nav a {
+  color: rgba(233, 239, 231, 0.72);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 0.25s ease;
+}
+
+.site-nav a:hover,
+.site-nav a:focus-visible,
+.site-nav a[aria-current="page"] {
+  color: var(--moss);
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    width: calc(100% - 40px);
+  }
+
+  .site-nav {
+    gap: 14px;
+  }
+
+  .site-nav a {
+    font-size: 10px;
+    letter-spacing: 0.12em;
+  }
+}
