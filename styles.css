@@ -249,3 +249,74 @@ footer{padding:46px 0 70px;border-top:1px solid rgba(199,212,201,.12);font-size:
     justify-self: start;
   }
 }
+
+/* ---------- profile sidebar links ---------- */
+
+.profile-sidebar {
+  width: 280px;
+  max-width: 100%;
+  justify-self: end;
+}
+
+.profile-sidebar .profile-photo {
+  width: 100%;
+}
+
+.profile-links {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.profile-links a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+
+  width: 100%;
+  padding: 13px 15px;
+
+  border: 1px solid rgba(199, 212, 201, 0.2);
+  background: rgba(16, 26, 20, 0.42);
+  color: var(--lichen);
+
+  font-family: "Public Sans", sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  line-height: 1.4;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.profile-links a span {
+  color: rgba(199, 212, 201, 0.55);
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  text-transform: none;
+}
+
+.profile-links a:hover,
+.profile-links a:focus-visible {
+  border-color: var(--moss);
+  background: rgba(127, 166, 83, 0.12);
+  color: var(--moss);
+}
+
+.profile-links a:focus-visible {
+  outline: 2px solid var(--moss);
+  outline-offset: 3px;
+}
+
+@media (max-width: 700px) {
+  .profile-sidebar {
+    width: 280px;
+    justify-self: start;
+  }
+}
