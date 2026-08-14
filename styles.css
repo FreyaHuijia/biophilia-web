@@ -158,3 +158,49 @@ footer{padding:46px 0 70px;border-top:1px solid rgba(199,212,201,.12);font-size:
     letter-spacing: 0.12em;
   }
 }
+
+/* ---------- standard information pages ---------- */
+
+.content-page {
+  min-height: 100%;
+  overflow-y: auto;
+  background:
+    radial-gradient(circle at top right, rgba(127,166,83,.12), transparent 38%),
+    var(--pine);
+}
+
+.page-main {
+  width: min(880px, calc(100% - 56px));
+  margin: 0 auto;
+  padding: 110px 0 90px;
+}
+
+.page-title {
+  max-width: 780px;
+  margin-bottom: 80px;
+  font-size: clamp(48px, 8vw, 88px);
+  letter-spacing: 0.02em;
+}
+
+.profile {
+  padding: 60px 0;
+}
+
+.profile .role {
+  margin: -16px 0 24px;
+  color: var(--moss);
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 640px) {
+  .page-main {
+    width: calc(100% - 40px);
+    padding-top: 70px;
+  }
+
+  .page-title {
+    margin-bottom: 50px;
+  }
+}
