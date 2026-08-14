@@ -205,3 +205,47 @@ footer{padding:46px 0 70px;border-top:1px solid rgba(199,212,201,.12);font-size:
   }
 }
 
+/* ---------- Belinda biography and portrait ---------- */
+
+.profile.profile--with-photo {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 48px;
+  align-items: start;
+}
+
+.profile.profile--with-photo .profile-copy {
+  min-width: 0;
+}
+
+.profile.profile--with-photo .profile-copy .prose {
+  max-width: none;
+}
+
+.profile.profile--with-photo .profile-photo {
+  width: 280px;
+  max-width: 100%;
+  margin: 0;
+  justify-self: end;
+}
+
+.profile.profile--with-photo .profile-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 420px;
+  object-fit: cover;
+  border: 1px solid rgba(199, 212, 201, 0.16);
+}
+
+@media (max-width: 700px) {
+  .profile.profile--with-photo {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .profile.profile--with-photo .profile-photo {
+    width: 260px;
+    justify-self: start;
+  }
+}
