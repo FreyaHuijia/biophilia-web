@@ -122,7 +122,7 @@ function withinPlaceholder(){
 const loader=new THREE.TextureLoader();
 const clickables=[]; const stops=[];
 const GALLERY_R=8.5;
-const angles=[Math.PI/2, Math.PI/2+2*Math.PI/3, Math.PI/2+4*Math.PI/3];
+const angles=PAINTINGS.map((_,i)=>Math.PI/2+i*2*Math.PI/PAINTINGS.length);
 
 PAINTINGS.forEach((p,i)=>{
   const a=angles[i];
@@ -204,9 +204,11 @@ function lookToward(target){
 }
 lookToward(stops[0].look);
 
-let dragging=false,lastX=0,lastY=0,moved=0;
+let dragging=false,lastX=0,lastY=0,moved=0,overviewAutoRotate=true;
 const cv=renderer.domElement;
-cv.addEventListener('pointerdown',e=>{dragging=true;moved=0;lastX=e.clientX;lastY=e.clientY;});
+cv.addEventListener('pointerdown',e=>{
+  dragging=true;overviewAutoRotate=false;moved=0;lastX=e.clientX;lastY=e.clientY;
+});
 addEventListener('pointermove',e=>{
   if(!dragging)return;
   const dx=e.clientX-lastX, dy=e.clientY-lastY;
@@ -218,7 +220,10 @@ addEventListener('pointermove',e=>{
 addEventListener('pointerup',()=>dragging=false);
 
 const keys={};
-addEventListener('keydown',e=>{keys[e.code]=true;});
+addEventListener('keydown',e=>{
+  keys[e.code]=true;
+  if(['KeyW','KeyA','KeyS','KeyD','ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.code)) overviewAutoRotate=false;
+});
 addEventListener('keyup',e=>{keys[e.code]=false;});
 
 /* click to select painting */
@@ -243,11 +248,12 @@ function ease(t){return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;}
 let currentStop='overview';
 function goToStop(i){
   currentStop=i;
+  if(i==='overview') overviewAutoRotate=true;
   const s= i==='overview'?OVERVIEW:stops[i];
   goTo(s.pos,s.look,2200, i==='overview'?null:()=>openPanel(i));
   document.querySelectorAll('#nav button').forEach(b=>
     b.classList.toggle('cur',String(b.dataset.stop)===String(i)));
-  if(i==='overview') closePanel();
+  if(i==='overview') openOverviewPanel();
 }
 
 /* ---------- resize ---------- */
@@ -291,6 +297,7 @@ function animate(){
     pitch+=(dPitch-pitch)*Math.min(1,dt*3.2);
     if(tween.t>=tween.dur){const cb=tween.onDone;tween=null;if(cb)cb();}
   }else if(tourActive){
+    if(currentStop==='overview'&&overviewAutoRotate) yaw+=dt*.07;
     // WASD walk
     const sp=3.2*dt;
     const fwd=new THREE.Vector3(Math.sin(yaw),0,Math.cos(yaw));

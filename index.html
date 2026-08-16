@@ -21,12 +21,13 @@
       <button class="icobtn" id="exitBtn">Exit tour</button>
     </div>
   </div>
-  <div id="hint">Drag to look · Click a painting to approach · WASD to walk</div>
+  <div id="hint">Move: WASD / arrow keys · Rotate: drag · Approach: click a painting</div>
   <div id="nav" role="navigation" aria-label="Tour navigation">
     <button data-stop="overview" class="cur">Overview</button>
     <button data-stop="0">Ascent</button>
     <button data-stop="1">Within</button>
-    <button data-stop="2">Terrain</button>
+    <button data-stop="2">Stillness</button>
+    <button data-stop="3">Terrain</button>
   </div>
   <aside id="panel" aria-live="polite">
     <button class="close" id="panelClose" aria-label="Close panel">×</button>
@@ -91,21 +92,26 @@
     </section>
 
     <section id="works">
-      <h2>Three Paintings</h2>
+      <h2>Four Paintings</h2>
       <div class="works">
         <button class="work" data-jump="0">
           <img src="ascent.jpg" alt="Ascent — oil painting of a face emerging from forest canopy">
-          <div><h3>ASCENT</h3><div class="meta">Oil on canvas · 5 × 6 ft</div></div>
+          <div><h3>ASCENT</h3><div class="meta">Oil on canvas · 5 × 6 ft<br>Belinda Person (BelaB) · $6,000 US</div></div>
           <span class="go">View in tour →</span>
         </button>
         <button class="work" data-jump="1">
           <img src="within.jpg" alt="Within — oil painting of a face emerging beside a forest stream">
-          <div><h3>WITHIN</h3><div class="meta">Oil on canvas · 30 × 40 in</div></div>
+          <div><h3>WITHIN</h3><div class="meta">Oil on canvas · 40 × 30 in<br>Belinda Person (BelaB) · $2,800 US</div></div>
           <span class="go">View in tour →</span>
         </button>
         <button class="work" data-jump="2">
+          <img src="stillness.jpg" alt="Stillness — oil painting of turquoise water, pale rocks, and a forest shoreline">
+          <div><h3>STILLNESS</h3><div class="meta">Oil on canvas · 20 × 24 in<br>Belinda Person (BelaB) · $1,200 US</div></div>
+          <span class="go">View in tour →</span>
+        </button>
+        <button class="work" data-jump="3">
           <img src="terrain.jpg" alt="Terrain — oil painting of moss-covered forms resting like a body in the forest">
-          <div><h3>TERRAIN</h3><div class="meta">Oil on canvas · 18 × 20 in</div></div>
+          <div><h3>TERRAIN</h3><div class="meta">Oil on canvas · 18 × 24 in<br>Belinda Person (BelaB) · $1,000 US</div></div>
           <span class="go">View in tour →</span>
         </button>
       </div>

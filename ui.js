@@ -1,13 +1,32 @@
 /* Landing page, painting labels, and tour navigation. */
 /* ---------- didactic panel ---------- */
 const panel=document.getElementById('panel');
+const overviewText=`This series is my artistic meditation on our connection to the natural world.
+
+Human presence emerges from stone, water, and mountain, not as intrusion, but as belonging.
+
+Biophilia is a call to return.
+To see nature not as background, but as guide.
+To understand that in observing the earth, we are also observing ourselves.
+
+Nature becomes teacher, mirror, and memory, reminding us that separation has always been an illusion.`;
+function openOverviewPanel(){
+  document.getElementById('pEyebrow').textContent='Artist statement';
+  document.getElementById('pTitle').textContent='BIOPHILIA';
+  document.getElementById('pDims').textContent='';
+  document.getElementById('pQuote').textContent=overviewText;
+  document.getElementById('pCtx').textContent='— Belinda Person (BelaB)';
+  document.getElementById('pVr').hidden=true;
+  document.getElementById('pVrVideo').pause();
+  panel.classList.add('open');
+}
 function openPanel(i){
   const p=PAINTINGS[i];
-  document.getElementById('pEyebrow').textContent='Biophilia · Painting '+(i+1)+' of 3';
+  document.getElementById('pEyebrow').textContent='Biophilia · Painting '+(i+1)+' of '+PAINTINGS.length;
   document.getElementById('pTitle').textContent=p.title;
   document.getElementById('pDims').textContent=p.dims;
   document.getElementById('pQuote').textContent=p.quote;
-  document.getElementById('pCtx').textContent=p.ctx;
+  document.getElementById('pCtx').textContent=p.artist+' · Value: '+p.value;
   const vrWrap=document.getElementById('pVr'),vrVid=document.getElementById('pVrVideo');
   if(p.vr){
     if(vrVid.getAttribute('src')!==p.vr){vrVid.src=p.vr;vrVid.poster=p.src;}
@@ -30,8 +49,8 @@ function enterTour(jump){
   tourUI.classList.add('active');
   tourUI.setAttribute('aria-hidden','false');
   tourActive=true;
-  setTimeout(()=>document.getElementById('hint').classList.add('fade'),7000);
   if(jump!==undefined) setTimeout(()=>goToStop(jump),700);
+  else openOverviewPanel();
 }
 document.getElementById('enterBtn').addEventListener('click',()=>enterTour());
 document.querySelectorAll('.work').forEach(b=>
@@ -41,8 +60,8 @@ document.getElementById('exitBtn').addEventListener('click',()=>{
   landing.classList.remove('hidden');
   tourUI.classList.remove('active');
   tourUI.setAttribute('aria-hidden','true');
-  closePanel();
   goToStop('overview');
+  closePanel();
 });
 document.querySelectorAll('#nav button').forEach(b=>
   b.addEventListener('click',()=>{
