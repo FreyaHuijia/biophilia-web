@@ -55,14 +55,16 @@ function enterTour(jump){
 document.getElementById('enterBtn').addEventListener('click',()=>enterTour());
 document.querySelectorAll('.work').forEach(b=>
   b.addEventListener('click',()=>enterTour(parseInt(b.dataset.jump))));
-document.getElementById('exitBtn').addEventListener('click',()=>{
+function exitTour(){
   tourActive=false;
   landing.classList.remove('hidden');
   tourUI.classList.remove('active');
   tourUI.setAttribute('aria-hidden','true');
   goToStop('overview');
   closePanel();
-});
+}
+document.getElementById('exitBtn').addEventListener('click',exitTour);
+document.getElementById('homeBtn').addEventListener('click',exitTour);
 document.querySelectorAll('#nav button').forEach(b=>
   b.addEventListener('click',()=>{
     const s=b.dataset.stop;
