@@ -10,7 +10,7 @@ An immersive virtual gallery created for a Georgia Institute of Technology Catal
 - `gallery-3d.js` — Three.js scene, camera, controls, and animation
 - `ui.js` — landing page, tour navigation, and painting panels
 - `audio.js` — generated ambient soundscape
-- `ascent.jpg`, `within.jpg`, `stillness.jpg`, and `terrain.jpg` — painting image assets
+- `ascent.png`, `within.png`, `stillness.jpg`, and `terrain.jpg` — painting image assets
 
 ## Preview locally
 
