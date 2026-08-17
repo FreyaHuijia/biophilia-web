@@ -50,7 +50,7 @@ function enterTour(jump){
   tourUI.setAttribute('aria-hidden','false');
   tourActive=true;
   if(jump!==undefined) setTimeout(()=>goToStop(jump),700);
-  else openOverviewPanel();
+  else if(matchMedia('(min-width: 641px)').matches) openOverviewPanel();
 }
 document.getElementById('enterBtn').addEventListener('click',()=>enterTour());
 document.querySelectorAll('.work').forEach(b=>
