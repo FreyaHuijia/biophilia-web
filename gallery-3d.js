@@ -213,6 +213,7 @@ addEventListener('pointermove',e=>{
   if(!dragging)return;
   const dx=e.clientX-lastX, dy=e.clientY-lastY;
   moved+=Math.abs(dx)+Math.abs(dy);
+  if(moved>3) closePanel();
   lastX=e.clientX;lastY=e.clientY;
   yaw-=dx*0.0042; pitch-=dy*0.0032;
   pitch=THREE.MathUtils.clamp(pitch,-1.1,1.1);
@@ -222,7 +223,10 @@ addEventListener('pointerup',()=>dragging=false);
 const keys={};
 addEventListener('keydown',e=>{
   keys[e.code]=true;
-  if(['KeyW','KeyA','KeyS','KeyD','ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.code)) overviewAutoRotate=false;
+  if(['KeyW','KeyA','KeyS','KeyD','ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.code)){
+    overviewAutoRotate=false;
+    closePanel();
+  }
 });
 addEventListener('keyup',e=>{keys[e.code]=false;});
 
