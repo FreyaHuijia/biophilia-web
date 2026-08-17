@@ -132,7 +132,7 @@ PAINTINGS.forEach((p,i)=>{
   group.lookAt(0,0,0);
 
   // frame
-  const frameDepth=.07, border=.07;
+  const frameDepth=.07, border=0;
   const frame=new THREE.Mesh(
     new THREE.BoxGeometry(p.w+border*2,p.h+border*2,frameDepth),
     new THREE.MeshStandardMaterial({color:0x241d26,roughness:.6})
