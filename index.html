@@ -16,12 +16,17 @@
 <div id="tourUI" aria-hidden="true">
   <div class="topbar">
     <button class="brand" id="homeBtn" aria-label="Return to the Biophilia home page">BIOPHILIA</button>
+
     <div class="topbtns">
       <button class="icobtn" id="soundBtn" aria-pressed="false">Sound</button>
       <button class="icobtn" id="exitBtn">Exit tour</button>
     </div>
   </div>
-  <div id="hint">Move: WASD / arrow keys · Rotate: drag · Approach: click a painting</div>
+
+  <div id="hint">
+    Move: WASD / arrow keys · Rotate: drag · Approach: click a painting
+  </div>
+
   <div id="nav" role="navigation" aria-label="Tour navigation">
     <button data-stop="overview" class="cur">Overview</button>
     <button data-stop="0">Ascent</button>
@@ -29,39 +34,56 @@
     <button data-stop="2">Stillness</button>
     <button data-stop="3">Terrain</button>
   </div>
+
   <aside id="panel" aria-live="polite">
     <button class="close" id="panelClose" aria-label="Close panel">×</button>
+
     <div class="eyebrow" id="pEyebrow"></div>
     <h3 id="pTitle"></h3>
     <div class="dims" id="pDims"></div>
     <blockquote id="pQuote"></blockquote>
     <div class="ctx" id="pCtx"></div>
+
     <div class="pvr" id="pVr" hidden>
       <div class="pvr-label">In virtual reality</div>
-      <video id="pVrVideo" muted loop playsinline preload="none"></video>
+      <video
+        id="pVrVideo"
+        muted
+        loop
+        playsinline
+        preload="none"
+      ></video>
     </div>
   </aside>
 </div>
 
 <!-- ============ LANDING ============ -->
 <div id="landing">
-  
+
   <header class="site-header">
     <a class="site-logo" href="./">BIOPHILIA</a>
-  
+
     <nav class="site-nav" aria-label="Main navigation">
       <a href="./" aria-current="page">Home</a>
       <a href="about.html">About</a>
       <a href="team.html">Team Members</a>
-      <a href="contact.html">Contact</a>
+      <a href="contact.html" data-contact-open>Contact</a>
     </nav>
   </header>
-  
+
   <div class="wrap">
     <div class="hero">
-      <div class="eyebrow">Catalyst Grant Project · Georgia Institute of Technology</div>
+      <div class="eyebrow">
+        Catalyst Grant Project · Georgia Institute of Technology
+      </div>
+
       <h1>BIOPHILIA</h1>
-      <p class="lede">An invitation to see nature as our teacher, asking us to slow down, observe, and listen.</p>
+
+      <p class="lede">
+        An invitation to see nature as our teacher, asking us to slow down,
+        observe, and listen.
+      </p>
+
       <div class="actions">
         <button class="btn" id="enterBtn">Enter the virtual tour</button>
         <span class="scrollhint">or scroll to read more ↓</span>
@@ -70,14 +92,30 @@
 
     <section id="vr">
       <div class="eyebrow">Immersive Experience</div>
+
       <h2>Step inside the paintings</h2>
+
       <div class="vr-video">
         <!-- TODO: swap in the three-painting montage video once it is ready -->
-        <video src="within-vr.mp4" poster="within.png" autoplay muted loop playsinline preload="metadata"></video>
+        <video
+          src="within-vr.mp4"
+          poster="within.png"
+          autoplay
+          muted
+          loop
+          playsinline
+          preload="metadata"
+        ></video>
       </div>
-      <p class="prose">Biophilia reaches beyond the canvas. In virtual reality, each painting becomes a place, a living, three-dimensional world you can move through.</p>
+
+      <p class="prose">
+        Biophilia reaches beyond the canvas. In virtual reality, each painting
+        becomes a place, a living, three-dimensional world you can move
+        through.
+      </p>
+
       <div class="actions">
-        <!-- TODO: replace href="#" with the VR experience URL (e.g. Meta Quest / WebXR link) when it is live -->
+        <!-- TODO: replace href="#" with the VR experience URL once it is live -->
         <a class="btn" id="vrBtn" href="#" role="button">View in VR →</a>
         <span class="scrollhint">Launching soon</span>
       </div>
@@ -85,33 +123,105 @@
 
     <section id="mission">
       <h2>The Project</h2>
-      <p class="prose">There is a quiet wisdom in nature.</p>
-      <p class="prose">Nothing rushes to become. Rivers find their way, trees reach toward the light, and life unfolds in rhythms of movement and rest. Somewhere along the way, we learned to separate ourselves from this rhythm, to search outside of ourselves for the clarity, balance, and belonging that nature has been reflecting back to us all along.</p>
-      <p class="prose">Biophilia is an immersive art experience that explores the intimate relationship between the human body and the natural world. Through painting, virtual reality, sound, and digital media, the project dissolves the boundaries between human and nature, inviting us to remember that we are not simply observers of the natural world, we are part of it.</p>
-      <p class="prose">Supported by the Georgia Tech Arts Catalyst Grant, Biophilia is an evolving body of work and the beginning of a larger exploration of connection, presence, and our innate relationship with the living world.</p>
+
+      <p class="prose">
+        There is a quiet wisdom in nature.
+      </p>
+
+      <p class="prose">
+        Nothing rushes to become. Rivers find their way, trees reach toward the
+        light, and life unfolds in rhythms of movement and rest. Somewhere
+        along the way, we learned to separate ourselves from this rhythm, to
+        search outside of ourselves for the clarity, balance, and belonging
+        that nature has been reflecting back to us all along.
+      </p>
+
+      <p class="prose">
+        Biophilia is an immersive art experience that explores the intimate
+        relationship between the human body and the natural world. Through
+        painting, virtual reality, sound, and digital media, the project
+        dissolves the boundaries between human and nature, inviting us to
+        remember that we are not simply observers of the natural world, we are
+        part of it.
+      </p>
+
+      <p class="prose">
+        Supported by the Georgia Tech Arts Catalyst Grant, Biophilia is an
+        evolving body of work and the beginning of a larger exploration of
+        connection, presence, and our innate relationship with the living
+        world.
+      </p>
     </section>
 
     <section id="works">
       <h2>Paintings</h2>
+
       <div class="works">
         <button class="work" data-jump="0">
-          <img src="ascent.png" alt="Ascent — oil painting of a human figure merging into a monumental tree">
-          <div><h3>ASCENT</h3><div class="meta">Oil on canvas · 5 × 6 ft<br>Belinda Person (BelaB) · $6,000 US</div></div>
+          <img
+            src="ascent.png"
+            alt="Ascent — oil painting of a human figure merging into a monumental tree"
+          >
+
+          <div>
+            <h3>ASCENT</h3>
+            <div class="meta">
+              Oil on canvas · 5 × 6 ft<br>
+              Belinda Person (BelaB) · $6,000 US
+            </div>
+          </div>
+
           <span class="go">View in tour →</span>
         </button>
+
         <button class="work" data-jump="1">
-          <img src="within.png" alt="Within — oil painting of a face emerging beside a forest stream">
-          <div><h3>WITHIN</h3><div class="meta">Oil on canvas · 40 × 30 in<br>Belinda Person (BelaB) · $2,800 US</div></div>
+          <img
+            src="within.png"
+            alt="Within — oil painting of a face emerging beside a forest stream"
+          >
+
+          <div>
+            <h3>WITHIN</h3>
+            <div class="meta">
+              Oil on canvas · 40 × 30 in<br>
+              Belinda Person (BelaB) · $2,800 US
+            </div>
+          </div>
+
           <span class="go">View in tour →</span>
         </button>
+
         <button class="work" data-jump="2">
-          <img src="stillness.jpg" alt="Stillness — oil painting of turquoise water, pale rocks, and a forest shoreline">
-          <div><h3>STILLNESS</h3><div class="meta">Oil on canvas · 20 × 24 in<br>Belinda Person (BelaB) · $1,200 US</div></div>
+          <img
+            src="stillness.jpg"
+            alt="Stillness — oil painting of turquoise water, pale rocks, and a forest shoreline"
+          >
+
+          <div>
+            <h3>STILLNESS</h3>
+            <div class="meta">
+              Oil on canvas · 20 × 24 in<br>
+              Belinda Person (BelaB) · $1,200 US
+            </div>
+          </div>
+
           <span class="go">View in tour →</span>
         </button>
+
         <button class="work" data-jump="3">
-          <img src="terrain.jpg" alt="Terrain — oil painting of moss-covered forms resting like a body in the forest">
-          <div><h3>TERRAIN</h3><div class="meta">Oil on canvas · 18 × 24 in<br>Belinda Person (BelaB) · $1,000 US</div></div>
+          <img
+            src="terrain.jpg"
+            alt="Terrain — oil painting of moss-covered forms resting like a body in the forest"
+          >
+
+          <div>
+            <h3>TERRAIN</h3>
+            <div class="meta">
+              Oil on canvas · 18 × 24 in<br>
+              Belinda Person (BelaB) · $1,000 US
+            </div>
+          </div>
+
           <span class="go">View in tour →</span>
         </button>
       </div>
@@ -124,10 +234,45 @@
   </div>
 </div>
 
+<!-- ============ CONTACT POP-UP SHELL ============ -->
+<div class="contact-modal" id="contactModal" hidden>
+  <div
+    class="contact-modal__backdrop"
+    data-contact-close
+    aria-hidden="true"
+  ></div>
+
+  <div
+    class="contact-modal__dialog"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Contact Biophilia"
+  >
+    <button
+      class="contact-modal__close"
+      type="button"
+      data-contact-close
+      aria-label="Close contact form"
+    >
+      ×
+    </button>
+
+    <iframe
+      class="contact-modal__frame"
+      id="contactFrame"
+      title="Contact Biophilia"
+      loading="lazy"
+    ></iframe>
+  </div>
+</div>
+
+<!-- ============ SCRIPTS ============ -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="gallery-data.js"></script>
 <script src="audio.js"></script>
 <script src="ui.js"></script>
 <script src="gallery-3d.js"></script>
+<script src="contact-modal.js"></script>
+
 </body>
 </html>
