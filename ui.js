@@ -26,7 +26,7 @@ function openPanel(i){
   document.getElementById('pTitle').textContent=p.title;
   document.getElementById('pDims').textContent=p.dims;
   document.getElementById('pQuote').textContent=p.quote;
-  document.getElementById('pCtx').textContent=p.artist+' · Value: '+p.value;
+  document.getElementById('pCtx').textContent=p.artist;
   const vrWrap=document.getElementById('pVr'),vrVid=document.getElementById('pVrVideo');
   if(p.vr){
     if(vrVid.getAttribute('src')!==p.vr){vrVid.src=p.vr;vrVid.poster=p.src;}
