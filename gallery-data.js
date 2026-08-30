@@ -7,6 +7,7 @@ window.PAINTINGS = [
     quote:"Trees don't leave the ground to grow. They stay connected as they rise. Growth doesn't take us away; it keeps us rooted."
   },
   {
+    //if this doesn't work, contact Freya asap
     id:"within", title:"WITHIN", dims:"Oil on canvas · 40 × 30 in",
     w:1.5, h:2.0, src:"within.png", vr:"Within_VR_Preview.mp4",
     artist:"Belinda Person (BelaB)",
