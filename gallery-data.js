@@ -8,7 +8,7 @@ window.PAINTINGS = [
   },
   {
     id:"within", title:"WITHIN", dims:"Oil on canvas · 40 × 30 in",
-    w:1.5, h:2.0, src:"within.png", vr:"Within_VR_Preview.mp4",
+    w:1.5, h:2.0, src:"within.png", vr:"within-vr.mp4",
     artist:"Belinda Person (BelaB)",
     quote:"Nature doesn't search for where it belongs. It already is. Nothing is missing. We, too, are enough when we embrace ourselves."
   },
