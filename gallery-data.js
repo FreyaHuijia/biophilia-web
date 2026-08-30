@@ -2,7 +2,7 @@ window.PAINTINGS = [
   // 3D size scale: 1 gallery unit = 20 inches.
   {
     id:"ascent", title:"ASCENT", dims:"Oil on canvas · 5 × 6 ft",
-    w:3.6, h:3.0, src:"ascent.png",
+    w:3.6, h:3.0, src:"ascent.png", vr:"Ascent_VR_Preview.mp4",
     artist:"Belinda Person (BelaB)",
     quote:"Trees don't leave the ground to grow. They stay connected as they rise. Growth doesn't take us away; it keeps us rooted."
   },
