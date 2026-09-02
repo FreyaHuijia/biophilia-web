@@ -45,10 +45,10 @@ h2{font-family:'Fraunces',serif;font-weight:300;font-size:clamp(28px,4vw,40px);m
 
 /* VR promo module */
 .vr-video{position:relative;margin-top:8px;border:1px solid rgba(199,212,201,.16);background:#000;overflow:hidden}
-.vr-video video{display:block;width:100%;height:auto}
+.vr-video video{display:block;width:100%;height:auto;cursor:zoom-in}
 .vr-exit{display:none;position:absolute;top:20px;right:20px;z-index:1;border:1px solid rgba(255,255,255,.65);background:rgba(0,0,0,.65);color:#fff;padding:10px 14px;cursor:pointer}
 .vr-video:fullscreen{display:grid;place-items:center;border:0;background:#000}
-.vr-video:fullscreen video{width:100vw;height:100vh;object-fit:contain}
+.vr-video:fullscreen video{width:100vw;height:100vh;object-fit:contain;cursor:default}
 .vr-video:fullscreen .vr-exit{display:block}
 .vr-tag{position:absolute;left:16px;bottom:14px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--lichen);background:rgba(11,20,16,.6);backdrop-filter:blur(6px);padding:8px 14px;border:1px solid rgba(199,212,201,.2)}
 #vr .prose{margin-top:26px}
