@@ -105,9 +105,10 @@
 
       <h2>Step inside the paintings</h2>
 
-      <div class="vr-video">
+      <div class="vr-video" id="landingVrPlayer">
         <!-- TODO: swap in the three-painting montage video once it is ready -->
         <video
+          id="landingVrVideo"
           src="within-vr.mp4"
           poster="Within_VR_Preview-poster.jpg"
           autoplay
@@ -116,6 +117,7 @@
           playsinline
           preload="metadata"
         ></video>
+        <button class="vr-exit" id="landingVrExit" type="button">× Exit fullscreen</button>
       </div>
 
       <p class="prose">
@@ -125,9 +127,7 @@
       </p>
 
       <div class="actions">
-        <!-- TODO: replace href="#" with the VR experience URL once it is live -->
-        <a class="btn" id="vrBtn" href="#" role="button">View in VR →</a>
-        <span class="scrollhint">Launching soon</span>
+        <button class="btn" id="vrBtn" type="button">Fullscreen</button>
       </div>
     </section>
 

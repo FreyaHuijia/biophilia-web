@@ -85,12 +85,14 @@ document.querySelectorAll('#nav button').forEach(b=>
     goToStop(s==='overview'?'overview':parseInt(s));
   }));
 
-/* ---------- VR promo button ---------- */
-/* Placeholder until a real VR link is set: once the anchor's href is a real URL
-   (not "#"), the click falls through and navigates normally. */
+/* ---------- landing VR video fullscreen ---------- */
 const vrBtn=document.getElementById('vrBtn');
-if(vrBtn){
-  vrBtn.addEventListener('click',e=>{
-    if(vrBtn.getAttribute('href')==='#') e.preventDefault();
-  });
+const landingVrVideo=document.getElementById('landingVrVideo');
+const landingVrPlayer=document.getElementById('landingVrPlayer');
+function openLandingVrFullscreen(){
+  if(landingVrPlayer.requestFullscreen) landingVrPlayer.requestFullscreen();
+  else if(landingVrVideo.webkitEnterFullscreen) landingVrVideo.webkitEnterFullscreen();
 }
+vrBtn.addEventListener('click',openLandingVrFullscreen);
+landingVrVideo.addEventListener('click',openLandingVrFullscreen);
+document.getElementById('landingVrExit').addEventListener('click',()=>document.exitFullscreen());
