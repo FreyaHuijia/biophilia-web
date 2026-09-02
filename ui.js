@@ -29,7 +29,7 @@ function openPanel(i){
   document.getElementById('pCtx').textContent=p.artist;
   const vrWrap=document.getElementById('pVr'),vrVid=document.getElementById('pVrVideo');
   if(p.vr){
-    if(vrVid.getAttribute('src')!==p.vr){vrVid.src=p.vr;vrVid.poster=p.src;}
+    if(vrVid.getAttribute('src')!==p.vr){vrVid.src=p.vr;vrVid.poster=p.vrPoster||p.src;}
     vrWrap.hidden=false;
     vrVid.currentTime=0;vrVid.play().catch(()=>{});
   }else{
