@@ -46,13 +46,19 @@
 
     <div class="pvr" id="pVr" hidden>
       <div class="pvr-label">In virtual reality</div>
-      <video
-        id="pVrVideo"
-        muted
-        loop
-        playsinline
-        preload="metadata"
-      ></video>
+      <div class="pvr-player" id="pVrPlayer">
+        <video
+          id="pVrVideo"
+          muted
+          loop
+          playsinline
+          preload="metadata"
+          tabindex="0"
+          aria-label="Play VR video fullscreen"
+        ></video>
+        <button class="pvr-exit" id="pVrExit" type="button">× Exit fullscreen</button>
+      </div>
+      <button class="pvr-open" id="pVrOpen" type="button">Fullscreen</button>
     </div>
   </aside>
 </div>

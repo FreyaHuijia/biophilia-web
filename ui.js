@@ -40,6 +40,20 @@ function openPanel(i){
 function closePanel(){panel.classList.remove('open');document.getElementById('pVrVideo').pause();}
 document.getElementById('panelClose').addEventListener('click',closePanel);
 
+/* ---------- VR video fullscreen ---------- */
+const vrPlayer=document.getElementById('pVrPlayer');
+const vrVideo=document.getElementById('pVrVideo');
+function openVrFullscreen(){
+  if(vrPlayer.requestFullscreen) vrPlayer.requestFullscreen();
+  else if(vrVideo.webkitEnterFullscreen) vrVideo.webkitEnterFullscreen();
+}
+vrVideo.addEventListener('click',openVrFullscreen);
+document.getElementById('pVrOpen').addEventListener('click',openVrFullscreen);
+vrVideo.addEventListener('keydown',e=>{
+  if(e.key==='Enter'||e.key===' '){e.preventDefault();openVrFullscreen();}
+});
+document.getElementById('pVrExit').addEventListener('click',()=>document.exitFullscreen());
+
 /* ---------- landing / tour switching ---------- */
 const landing=document.getElementById('landing');
 const tourUI=document.getElementById('tourUI');

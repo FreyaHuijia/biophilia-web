@@ -84,7 +84,14 @@ footer{padding:46px 0 70px;border-top:1px solid rgba(199,212,201,.12);font-size:
 #panel .ctx{margin-top:30px;font-size:14.5px;line-height:1.8;color:rgba(199,212,201,.85)}
 #panel .pvr{margin-top:30px}
 #panel .pvr-label{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--moss);margin-bottom:12px}
-#panel .pvr video{display:block;width:100%;height:auto;border:1px solid rgba(199,212,201,.16);background:#000}
+#panel .pvr-player{position:relative}
+#panel .pvr video{display:block;width:100%;height:auto;border:1px solid rgba(199,212,201,.16);background:#000;cursor:zoom-in}
+#panel .pvr-open{width:100%;margin-top:8px;border:1px solid rgba(199,212,201,.3);background:transparent;color:var(--lichen);padding:10px;font-size:11px;letter-spacing:.16em;text-transform:uppercase;cursor:pointer}
+#panel .pvr-open:hover{border-color:var(--moss)}
+#panel .pvr-exit{display:none;position:absolute;top:20px;right:20px;z-index:1;border:1px solid rgba(255,255,255,.65);background:rgba(0,0,0,.65);color:#fff;padding:10px 14px;cursor:pointer}
+#panel .pvr-player:fullscreen{display:grid;place-items:center;background:#000}
+#panel .pvr-player:fullscreen video{width:100vw;height:100vh;object-fit:contain;border:0;cursor:default}
+#panel .pvr-player:fullscreen .pvr-exit{display:block}
 #panel .close{position:absolute;top:22px;right:22px;border:1px solid rgba(199,212,201,.3);background:transparent;color:var(--lichen);width:38px;height:38px;font-size:16px;cursor:pointer}
 #panel .close:hover{border-color:var(--moss)}
 
