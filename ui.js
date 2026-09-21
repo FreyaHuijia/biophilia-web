@@ -17,6 +17,7 @@ function openOverviewPanel(){
   document.getElementById('pQuote').textContent=overviewText;
   document.getElementById('pCtx').textContent='— Belinda Person (BelaB)';
   document.getElementById('pVr').hidden=true;
+  document.getElementById('pNoVr').hidden=true;
   document.getElementById('pVrVideo').pause();
   panel.classList.add('open');
 }
@@ -28,12 +29,15 @@ function openPanel(i){
   document.getElementById('pQuote').textContent=p.quote;
   document.getElementById('pCtx').textContent=p.artist;
   const vrWrap=document.getElementById('pVr'),vrVid=document.getElementById('pVrVideo');
+  const noVrWrap=document.getElementById('pNoVr');
   if(p.vr){
     if(vrVid.getAttribute('src')!==p.vr){vrVid.src=p.vr;vrVid.poster=p.vrPoster||p.src;}
     vrWrap.hidden=false;
+    noVrWrap.hidden=true;
     vrVid.currentTime=0;vrVid.play().catch(()=>{});
   }else{
     vrWrap.hidden=true;vrVid.pause();
+    noVrWrap.hidden=false;
   }
   panel.classList.add('open');
 }
